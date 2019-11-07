@@ -9,7 +9,7 @@ exports.up = function(knex) {
       tbl.string("name", 255).notNullable();
 
       tbl
-        .interger("species_id")
+        .integer("species_id")
         .unsigned()
         .reference("id")
         .inTable("species")
@@ -24,7 +24,7 @@ exports.up = function(knex) {
     .createTable("animal_zoos", tbl => {
       tbl.increments();
       tbl
-        .interger("zoo_id")
+        .integer("zoo_id")
         .unsigned()
         .reference("id")
         .inTable("zoos")
@@ -32,7 +32,7 @@ exports.up = function(knex) {
         .onUpdate("CASCADE");
 
       tbl
-        .interger("animal_id")
+        .integer("animal_id")
         .unsigned()
         .reference("id")
         .inTable("animals")
